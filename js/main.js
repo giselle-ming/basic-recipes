@@ -61,27 +61,11 @@ function getImages(ev) {
       error.classList.add("hidden");
       cards.innerHTML = data.meals
         .map((imageData) => {
-          //check if the id is in local storage
-          if (imageData.id in catNames) {
-            let name = catNames[imageData.id];
-            loader(0);
-            console.log(imageData);
-            mealId = imageData.id;
-            console.log(mealId);
-            //imageData.id is already in storage
-            console.log(catNames[imageData.id], "exists in the storage");
-            // append image/name
-            return `<div class="card">
-                    <img src="${imageData.strMealThumb}" class="card__image" alt="A nice photo of ${name}">
-                    <p>${name}</p>
-                    </div>`;
-          } else {
-            loader(0);
-            return `<div class="card" data-id="${imageData.idMeal}">
+          loader(0);
+          return `<div class="card" data-id="${imageData.idMeal}">
                     <img src="${imageData.strMealThumb}" class="card__image" alt="A nice photo of ${name}">
                     <p>${imageData.strMeal}</p>
                     </div>`;
-          }
         })
         .join("");
       const cardElements = document.querySelectorAll(".card");
