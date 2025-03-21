@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <script src="./js/main.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container-title">
+      <h1>Meal Planner</h1>
+      <div class="select-control">
+        <select name="select" id="categories-select">
+          <option selected disabled>Please pick a category</option>
+        </div>
+        </select>
+      </div>
+    </header>
+    <div class="container">
+      <main>
+        <div class="overlay hidden">
+          <div class="loader-wrapper">
+            <div class="dot-pulse">
+              <div class="dot-pulse__dot"></div>
+            </div>
+          </div>
+        </div>
+        <p class="error hidden"></p>
+        <div class="cards" id="cards"></div>
+        <div class="recipe-details hidden"></div>
+      </main>
+    </div>
+  </body>
+</html>
